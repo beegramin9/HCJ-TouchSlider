@@ -14,6 +14,8 @@
   left: 20px;
   display: flex;
   gap: 20px;
+  /* 브라우저의 터치 Feature를 막고 JS의 Touch Feature만 작동하게 한다 */
+  touch-action: none;
 }
 
 .card {

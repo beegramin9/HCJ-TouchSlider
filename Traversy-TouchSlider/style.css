@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  line-height: 1.7;
+  overflow: hidden;
+}
+
+.slider-container {
+  height: 100vh;
+  /* flex: 하위 Container가 Block요소같이 수평 쌓임
+  * 이때는 하위 컨테이너가
+  inline-flex: 하위 Container가 inline과 같이 수직 쌓임
+  즉, 하위 Container인 silde가 100 viewport width를 가져
+  한 화면을 가득 채운다 */
+  display: inline-flex;
+  overflow: hidden;
+  /* transform-transition: 부모자식관계까지만 */
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+  cursor: grab;
+}
+
+.slide {
+  max-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  user-select: none;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 60%;
+}
+
+.slide h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.slide h4 {
+  font-size: 1.25rem;
+}
+
+.btn {
+  background-color: #444;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+}
+
+.grabbing {
+  cursor: grabbing;
+}
+
+.grabbing .slide img {
+  scale: (0.9);
+  transition: scale 0.3s ease-out;
+}
